@@ -53,21 +53,11 @@ class Pokemon {
         echo '<br>';
         echo $this->Name . ' Attacks ' . $target->getName() . ' ';
         echo '<br>';
-        foreach($this->Attacks as $key=>$value) {
-            $ar[$key] = ($value);
-        }
-        if ($AttackNmbr == 0){
-            $damage=50;
-        }
-        else if ($AttackNmbr == 1){
-            $damage=20;
-        }
-        else if ($AttackNmbr == 2){
-            $damage=10;
-        }
-        else if ($AttackNmbr == 3){
-            $damage=30;
-        }
+
+        $attack = $this->Attacks[$AttackNmbr];
+
+        $damage = $attack['Damage'];
+
         $target->Damagereceive($damage);
     }
 
