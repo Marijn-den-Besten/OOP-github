@@ -8,10 +8,9 @@ class Pokemon {
     public $Attacks;
     public $Weakness;
     public $Resistance;
-    public $Target;
     private static $count;
 
-    public function __construct($Name, $Type, $HP, $Attacks, $Weakness, $Resistance, $Target)
+    public function __construct($Name, $Type, $HP, $Attacks, $Weakness, $Resistance)
     {
         $this->Name = $Name;
         $this->Type = $Type;
@@ -19,7 +18,6 @@ class Pokemon {
         $this->Attacks = $Attacks;
         $this->Weakness = $Weakness;
         $this->Resistance = $Resistance;
-        $this->Target = $Target;
         self::$count++;
     }
 
