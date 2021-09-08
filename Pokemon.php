@@ -9,6 +9,7 @@ class Pokemon {
     public $Weakness;
     public $Resistance;
     public $Target;
+    private static $count;
 
     public function __construct($Name, $Type, $HP, $Attacks, $Weakness, $Resistance, $Target)
     {
@@ -19,6 +20,7 @@ class Pokemon {
         $this->Weakness = $Weakness;
         $this->Resistance = $Resistance;
         $this->Target = $Target;
+        self::$count++;
     }
 
     public function __toString() {
@@ -42,11 +44,7 @@ class Pokemon {
     }
 
     function getPopulation() {
-        $this->setHP(60);
-        echo '<br>';
-        echo $this->Name . ' Is weer tot leven geholpen';
-        echo '<br>';
-        echo $this->Name . '"s HP is nu: ' . $this->HP;
+        return Pokemon::$count;
     }
 
     public function Attack($target, $AttackNmbr) {
@@ -78,6 +76,7 @@ class Pokemon {
         echo '<br>';
         if ($this->HP < 1){
             echo $this->Name . ' is overleden!';
+            self::$count--;
         }
     }
 

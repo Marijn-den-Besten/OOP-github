@@ -21,6 +21,7 @@ echo $Pikachu->getHP();
 echo '<br>';
 echo $Charmeleon->getHP();
 echo '<br>';
+echo Pokemon::getPopulation();
 
 ?>
 

@@ -11,6 +11,8 @@ public function __construct($Name)
     $this->Weakness = 'Water';
     $this->Resistance = 'Lightning';
 
+    parent::__construct($this->Name, $this->Type, $this->HP, $this->Attacks, $this->Weakness, $this->Resistance);
+
 }
 public function __toString(){
     echo '<div class="' . $this->Name . '">' . '<br>' . $this->Type . '<br>' . '<input type="text" id="HPPokemonChar" value="' . $this->HP  . '" disabled>' . '<input type="text" id="WeaknessChar" value="' . $this->Weakness  . '" disabled>' . '<input type="text" id="ResistanceChar" value="' . $this->Resistance . ' " disabled> ' . '</div>';
